@@ -1,7 +1,13 @@
-from flask import Flask, render_template
-app = Flask(__name__)
-@app.route('/')
-def hello_world():
-    return render_template('index.html')
+import os
+from flask import Flask, render_template, abort, url_for, json, jsonify
+import json
+
+app = Flask(__name__,template_folder='.')
+# read file
+with open('user.json', 'r') as myfile:
+    data = myfile.read()
+@app.route("/")
+def index():
+    return render_template('index.html', title="page", jsonfile=json.dumps(data))
 if __name__ == '__main__':
-    app.run(debug=True,host='0.0.0.0')
+    app.run(debug=True, host='0.0.0.0')

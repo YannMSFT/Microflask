@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>dockerize flask app</title>
-</head>
+<html>
 <body>
-    <h1> Hello World! </h1>
+<h2>JSON Data</h2>
+<p id="demo"></p>
+<script>
+ var jsonfile ={{ jsonfile|tojson }};
+ var obj = JSON.parse(jsonfile);;
+document.getElementById("demo").innerHTML = obj;
+</script>
 </body>
 </html>
