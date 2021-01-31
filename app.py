@@ -2,8 +2,7 @@ import os
 from flask import Flask, render_template, abort, url_for, json, jsonify
 import json
 
-app = Flask(__name__,template_folder='.')
-# read file
+app = Flask(__name__)
 with open('user.json', 'r') as myfile:
     data = myfile.read()
 @app.route("/")
